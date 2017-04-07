@@ -1,0 +1,426 @@
+/******************************************************************
+ ** CSS for Playback Station
+ **/
+
+
+
+    /* For busy cursor */
+body.waiting * {
+    cursor: wait !important;
+}
+
+  /* Normalize box sizes! See: http://css-tricks.com/international-box-sizing-awareness-day/
+   */
+*, *:before, *:after {
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+html {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-size: 14px;
+    background-color: black !important;
+    line-height: 1em;
+}
+
+    /* For busy cursor */
+body.waiting * {
+    cursor: wait !important;
+}
+
+footer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-size: 14px;
+    background-color: black !important;
+    line-height: 1em;
+
+    color: yellow;
+    height: 30px;
+    padding: 6px;
+}
+
+header {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-size: 14px;
+    background-color: black !important;
+
+    width: 100%;
+    color: yellow;
+    padding: 4px;
+}
+
+    /* Creates general layout ===================================
+     * http://philipwalton.github.io/solved-by-flexbox/demos/holy-grail/
+      */
+
+.HolyGrail {
+    min-height: 100%;
+}
+
+.HolyGrail, .HolyGrail-body {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.HolyGrail-body {
+    padding: .5em;
+    color: white;
+}
+
+.HolyGrail-content {
+    margin: .5em 0;
+}
+
+.HolyGrail-nav {
+    -webkit-box-ordinal-group: 0;
+    -webkit-order: -1;
+    -ms-flex-order: -1;
+    order: -1;
+}
+
+.HolyGrail-nav, .HolyGrail-activity {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+    font-size: 14px;
+    background-color: black !important;
+    line-height: 1em;
+
+    padding: 4px;
+    border-radius: 3px;
+    background: rgba(147, 128, 108, .1);
+}
+
+.HolyGrail-nav > p {
+    margin: 4px;
+    padding: 0;
+    margin-bottom: 7px;
+}
+
+
+.HolyGrail-nav hr, .HolyGrail-activity hr {
+    padding: 0px;
+    margin: 0px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    color: white !important;
+    line-height: 3px !important;
+    border: 1px solid;
+    height: 1px !important;
+}
+
+    /* Search box */
+.HolyGrail-nav input[type=text] {
+    border: 2px solid yellow; 
+    -webkit-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    box-shadow: 
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1); 
+    padding: 2px;
+    background: rgba(255,255,255,0.8);
+    margin: 4px 2px 4px 0px;
+    font-size: 11px;
+}
+
+.HolyGrail-activity {
+    overflow-x: hidden;
+}
+
+.HolyGrail-activity > p {
+    margin: 4px;
+    padding: 0;
+    margin-bottom: 7px;
+}
+
+    /* Top part of right sidebar */
+#pbs-activity {
+    height: 190px;
+    padding: 4px;
+    margin: 0px;
+}
+
+#pbs-activity p {
+    margin: 0px;
+    margin-bottom: 4px;
+    padding: 0px;
+}
+
+    /* Area for User Collection */
+    /* Bottom part of right sidebar */
+#pbs-user-container {
+    margin-top: 4px;
+    height: 350px;
+    overflow-y: auto;
+}
+
+#pbs-user-collection {
+    overflow: hidden;
+}
+
+#pbs-user-collection p {
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+    line-height: 1.1em;
+}
+
+#pbs-user-collection .track-select-title {
+}
+
+#pbs-user-collection .track-select-title.playing {
+    color: red;
+}
+
+i.fa-plus:hover {
+    cursor: pointer;
+}
+
+i.fa-trash:hover {
+    cursor: pointer;
+}
+
+    /* Specific screen/media optimizations =============
+     */
+
+@media (min-width:48em) {
+    .HolyGrail-body {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+
+    .HolyGrail-content {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        padding: 0 .5em;
+        margin: 0;
+    }
+
+    .HolyGrail-nav, .HolyGrail-activity {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 12em;
+        -ms-flex: 0 0 12em;
+        flex: 0 0 12em;
+    }
+}
+
+
+    /* Navigation Bar ====================
+     */
+
+.play-icon {
+    width: 22px;
+}
+
+.play-option {
+    cursor: pointer;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.play-option.selected {
+    color: yellow;
+}
+
+nav hr {
+    border-style: dotted;
+    color: white;
+    border: 0px;
+    padding: 0px;
+}
+
+#play-results-container {
+    height: 375px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 4px;
+    margin: 0px;
+}
+
+#play-results {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.play-result {
+    cursor: pointer;
+    margin-bottom: 4px;
+}
+
+.play-result:hover {
+    color: yellow;
+}
+
+.play-result.selected {
+    text-decoration: underline;
+}
+
+    /* Main Content area ====================
+     * main-top-view (icon, title and abstract)
+     * main-tabbed (tabbed view)
+     */
+
+#main-top-view {
+    height: 180px;
+    padding: 6px;
+    background-color: #404040;
+    overflow: auto;
+}
+
+.album {
+    width: 150px !important;
+    height: 150px !important;
+    margin: 6px;
+    float: left;
+}
+
+#main-tabbed {
+    height: 400px;
+}
+
+/* Tabs scrollable content
+ */
+
+#tabs > ul { position: fixed; width: 100%; }
+
+.tab-content {
+    max-height: 360px;
+    overflow-y: auto;
+    font-size: 12px;
+}
+
+.ui-tabs-nav {
+    font-size: 12px;
+}
+
+/* Track lists
+ */
+
+ /* Play button for tracks: either in collection listing or user collection */
+i.fa-play-circle {
+    cursor: pointer;
+}
+
+#track-table {
+    display: table;
+    border-spacing: 8px 4px;
+}
+
+.track-entry {
+    display: table-row;
+}
+
+.track-entry:nth-child(odd) {
+    background: #EEE;
+}
+
+.track-entry.playing {
+    color: red;
+}
+
+.track-title {
+    display: table-cell;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.track-year {
+    display: table-cell;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.track-time {
+    display: table-cell;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.track-credits {
+    display: table-cell;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+/* Transcriptions
+ */
+
+#tab-transcript p {
+    line-height: 1.1em;
+    margin-bottom: 6px;
+}
+
+#transcr-table {
+/*    display: table; */
+/*    overflow-y: scroll; */
+    border-spacing: 8px 4px;
+}
+
+.transcr-entry {
+    display: table-row;
+}
+
+.transcr-entry:nth-child(odd) {
+    background: #EEE;
+}
+
+.transcr-timestamp {
+    display: table-cell;
+    cursor: pointer;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+    /* "Playhead" styling is on timestamp */
+.transcr-timestamp.playing {
+    background-color: #007fff;
+    color: #fff;
+}
+
+.transcr-timestamp:hover {
+    background-color: #0055bb;
+    color: #fff;
+}
+
+.transcr-text {
+    display: table-cell;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
